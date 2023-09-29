@@ -1,0 +1,131 @@
+﻿@model List<Flight>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br />
+<br />
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plaka Verileri</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Card Styles */
+        .card {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #333;
+            color: white;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            margin: 0;
+            color: #333;
+        }
+
+        /* Button Styles */
+        .ozel-dugme {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+            .ozel-dugme:hover {
+                background-color: #45a049;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h5 class="mt-4">Uçuş Bilgileri</h5>
+        <hr>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card bg-secondary">
+                    <h5 class="card-header">En Fazla Uçuş Yapılan Ülke</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">@ViewData["countryNameMax"] -- @ViewData["countCountryNameMax"] adet</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card bg-secondary">
+                    <h5 class="card-header">En Az Uçuş Yapılan Ülke</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">@ViewData["countryNameMin"] -- @ViewData["countCountryNameMin"] adet</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card bg-secondary">
+                    <h5 class="card-header">En Fazla Uçuş Yapan Millet</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">@ViewData["nationalityNameMax"] -- @ViewData["countNationalityNameMax"] adet</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card bg-secondary">
+                    <h5 class="card-header">En Az Uçuş Yapan Millet</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">@ViewData["nationalityNameMin"] -- @ViewData["countNationalityNameMin"] adet</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card bg-secondary">
+                    <h5 class="card-header">En Fazla Uçuş Yapılan Kıta</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">@ViewData["continentsNameMax"] -- @ViewData["countContinentsNameMax"] adet</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card bg-secondary">
+                    <h5 class="card-header">En Az Uçuş Yapılan Kıta</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">@ViewData["continentsNameMin"] -- @ViewData["countContinentsNameMin"] adet</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <a href="/Search/Index" class="ozel-dugme">Ara</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
